@@ -1,0 +1,32 @@
+======== RULE ========
+    Name: Move - Has Taken Date
+    Rule: *-t-*/*Unknown DateTaken*
+    Action: Move
+    Destination: D:\Cloud\Dropbox\=---Pictures---=\%YearTaken%\%MonthTaken%\
+
+======== RULE ========
+    Name: Move - No Taken Date
+    Rule: *-m-*/*Unknown DateTaken*
+    Action: Move
+    Destination: D:\Cloud\Dropbox\=---Pictures---=\%YearModified%\%MonthModified%\
+
+======== RULE ========
+    Name: Rename - No Taken Date
+    Rule: *Unknown DateTaken*
+    Action: Rename
+    New Name: %DateModified%-m-%FileName#d>20%.%FileExt%
+
+======== RULE ========
+    Name: Rename original
+    Rule: *.jpg/*-m-*/*-t-*/*Unknown DateTaken*;*.png/*-m-*/*-t-*/*Unknown DateTaken*;*.jpeg/*-m-*/*-t-*/*Unknown DateTaken*;*.gif/*-m-*/*-t-*/*Unknown DateTaken*
+    Action: Rename
+    New Name: %DateTaken%-t-%FileName%.%FileExt%
+
+======== RULE ========
+    Name: Skip Subfolders
+    Rule: ##
+    Action: Ignore
+    Destination: -
+
+
+
